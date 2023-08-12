@@ -560,7 +560,7 @@
                                     {donation.date}
                                 </div>
                                 <div class="flex text-white font-bold text-lg">
-                                    donation.amount
+                                    {donation.amount}
                                 </div>
                             </div>
                         {/each}

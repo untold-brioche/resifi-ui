@@ -50,6 +50,7 @@ p {
     align-items: center;
     border-radius: 500px;
     background: #DBDBDB;
+    transition: margin 0.3s ease, padding 0.3s ease; /* Transition margin and padding properties over 0.3 seconds with ease timing function */
 }
 
 nav {
@@ -150,4 +151,15 @@ border-radius: 400px;
 opacity: 0.6;
 background: linear-gradient(121deg, #AA92E5 20.24%, rgba(170, 146, 229, 0.74) 69.35%, rgba(170, 146, 229, 0.00) 100%);
 filter: blur(75px);
+}
+
+.ghost-button:hover {
+    color: #808080;
+    cursor: pointer;
+}
+
+.button:hover {
+    margin: -1px;
+    padding: 1px 31px;
+    cursor: pointer;
 }

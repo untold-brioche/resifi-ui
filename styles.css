@@ -43,6 +43,10 @@ p {
     color: #ABABAB;
 }
 
+.hidden-grey {
+    color: #525252;
+}
+
 .button {
     display: flex;
     padding: 0px 30px;

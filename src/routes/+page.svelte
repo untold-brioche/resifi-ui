@@ -13,7 +13,7 @@
 
 <section class="flex flex-col mt-10">
     <div class="mx-auto text-center relative">
-        <div class="absolute -z-50 top-0 h-3/4 overflow-hidden">
+        <div class="absolute -z-50 top-0 h-5/6 overflow-hidden">
             <img src={globeImg} alt="globe" />
         </div>
         <h1

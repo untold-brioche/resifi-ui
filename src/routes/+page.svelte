@@ -27,7 +27,7 @@
         </p>
         <div class="mt-7 flex justify-center">
             <a
-                href="/login"
+                href="/dashboard"
                 class="py-[1rem] px-6 rounded-full bg-[#DBDBDB] text-dark text-lg font-semibold flex gap-0.5 items-center"
             >
                 <span>Get Started</span>
@@ -44,29 +44,6 @@
                     <IoIosArrowForward />
                 </div>
             </a>
-        </div>
-        <div class="mt-16 flex justify-center flex-col items-center gap-4s">
-            <p class="text-[#ABABAB] text-xl">SCROLL TO DISCOVER</p>
-            <svg
-                width="28"
-                height="48"
-                viewBox="0 0 28 48"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <rect
-                    x="1"
-                    y="1"
-                    width="26"
-                    height="46"
-                    rx="13"
-                    fill="#ABABAB"
-                    fill-opacity="0.01"
-                    stroke="#ABABAB"
-                    stroke-width="2"
-                />
-                <path d="M9 21L14 27L19 21" stroke="#ABABAB" stroke-width="2" />
-            </svg>
         </div>
     </div>
 </section>

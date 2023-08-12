@@ -15,7 +15,7 @@
 
     let donations: Donation[] = [];
     let totalTaxRebates: number = 0;
-    let totalItemsDonated: number = 0;
+    let distanceSaved: number = 0;
 
     const getDonations = async () => {
         const res = await fetch(`${api}/business/1/inventory`);
@@ -43,7 +43,7 @@
         const data = await res.json();
 
         totalTaxRebates = data.money_saved;
-        totalItemsDonated = data.count_saved;
+        distanceSaved = data.distance_saved;
     };
 
     onMount(async () => {
@@ -426,10 +426,10 @@
                     <div class="h-100 border-l mx-16 my-3 border-[#2D2D2D]" />
                     <div>
                         <h3 class="mb-5 text-lg tracking-tight text-[#ABABAB]">
-                            Total Items Donated
+                            Distance Saved
                         </h3>
                         <div class="text-6xl text-white font-bold mb-5">
-                            ${totalItemsDonated}
+                            {Math.ceil(distanceSaved)}km
                         </div>
                         <div
                             class="mb-3 tracking-tight text-lg flex gap-1.5 items-center"

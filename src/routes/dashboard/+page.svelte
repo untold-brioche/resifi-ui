@@ -1,6 +1,29 @@
 <script lang="ts">
     import logo from "$lib/images/logo.png";
     import IoIosLogOut from "svelte-icons/io/IoIosLogOut.svelte";
+    import charityImg from "$lib/images/charity.png";
+
+    interface Donation {
+        organization: string;
+        item: string;
+        date: Date;
+        amount: string;
+    }
+
+    const donations: Donation[] = [
+        {
+            organization: "HeartCare Charity",
+            item: "Men's Socks Size M",
+            date: new Date("2021-08-01"),
+            amount: "1,000",
+        },
+        {
+            organization: "HeartCare Charity",
+            item: "Men's Socks Size M",
+            date: new Date("2021-08-01"),
+            amount: "1,000",
+        },
+    ];
 </script>
 
 <aside class="fixed inset-y-0 left-0 text-white px-4 py-6">
@@ -487,6 +510,38 @@
                             </g>
                         </svg>
                     </button>
+                </div>
+                <div class="flex mt-4 flex-col gap-4">
+                    {#each donations as donation}
+                        <div class="flex justify-between items-center">
+                            <div class="flex gap-4">
+                                <img
+                                    src={charityImg}
+                                    alt="Charity logo"
+                                    class="h-10 bg-[#121416] p-1.5"
+                                />
+                                <div>
+                                    <h3 class="text-white text-lg">
+                                        {donation.organization}
+                                    </h3>
+                                    <p class="text-[#525252] text-sm">
+                                        {donation.item}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="text-[#ABABAB]">
+                                {donation.date.toLocaleDateString("en-US", {
+                                    day: "numeric",
+                                    month: "long",
+                                    hour: "numeric",
+                                    minute: "numeric",
+                                })}
+                            </div>
+                            <div class="flex text-white font-bold text-lg">
+                                +${donation.amount}
+                            </div>
+                        </div>
+                    {/each}
                 </div>
             </div>
         </div>

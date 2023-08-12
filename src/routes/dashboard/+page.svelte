@@ -2,28 +2,54 @@
     import logo from "$lib/images/logo.png";
     import IoIosLogOut from "svelte-icons/io/IoIosLogOut.svelte";
     import charityImg from "$lib/images/charity.png";
+    import { onMount } from "svelte";
+
+    const api = "https://equations-specials-colour-others.trycloudflare.com";
 
     interface Donation {
         organization: string;
         item: string;
-        date: Date;
+        date: string;
         amount: string;
     }
 
-    const donations: Donation[] = [
-        {
-            organization: "HeartCare Charity",
-            item: "Men's Socks Size M",
-            date: new Date("2021-08-01"),
-            amount: "1,000",
-        },
-        {
-            organization: "HeartCare Charity",
-            item: "Men's Socks Size M",
-            date: new Date("2021-08-01"),
-            amount: "1,000",
-        },
-    ];
+    let donations: Donation[] = [];
+    let totalTaxRebates: number = 0;
+    let totalItemsDonated: number = 0;
+
+    const getDonations = async () => {
+        const res = await fetch(`${api}/business/1/inventory`);
+
+        const data = await res.json();
+
+        data.items.forEach(async (item) => {
+            const res = await fetch(`${api}/charity/${item.charity_id}`);
+            const charity = await res.json();
+
+            donations = [
+                ...donations,
+                {
+                    organization: charity.name,
+                    item: item.item.name,
+                    date: item.create_date,
+                    amount: item.money_saved,
+                },
+            ];
+        });
+    };
+
+    const getSavings = async () => {
+        const res = await fetch(`${api}/business/1/savings`);
+        const data = await res.json();
+
+        totalTaxRebates = data.money_saved;
+        totalItemsDonated = data.count_saved;
+    };
+
+    onMount(async () => {
+        await getDonations();
+        await getSavings();
+    });
 </script>
 
 <aside class="fixed inset-y-0 left-0 text-white px-4 py-6">
@@ -274,7 +300,7 @@
     <div class="px-6 py-8">
         <div class="max-w-2xl ml-24 mt-16">
             <h1 class="text-5xl font-bold mb-3 text-white">
-                Welcome Back Black!
+                Welcome Back Blake!
             </h1>
             <div class="text-[#ABABAB] text-lg">
                 Make sure to check your most recent donations.
@@ -371,7 +397,7 @@
                             Total Tax-Rebates (USD)
                         </h3>
                         <div class="text-6xl text-white font-bold mb-5">
-                            $2,000
+                            ${totalTaxRebates}
                         </div>
                         <div
                             class="mb-3 tracking-tight text-lg flex gap-1.5 items-center"
@@ -400,10 +426,10 @@
                     <div class="h-100 border-l mx-16 my-3 border-[#2D2D2D]" />
                     <div>
                         <h3 class="mb-5 text-lg tracking-tight text-[#ABABAB]">
-                            Total Tax-Rebates (USD)
+                            Total Items Donated
                         </h3>
                         <div class="text-6xl text-white font-bold mb-5">
-                            $2,000
+                            ${totalItemsDonated}
                         </div>
                         <div
                             class="mb-3 tracking-tight text-lg flex gap-1.5 items-center"
@@ -512,36 +538,39 @@
                     </button>
                 </div>
                 <div class="flex mt-4 flex-col gap-4">
-                    {#each donations as donation}
-                        <div class="flex justify-between items-center">
-                            <div class="flex gap-4">
-                                <img
-                                    src={charityImg}
-                                    alt="Charity logo"
-                                    class="h-10 bg-[#121416] p-1.5"
-                                />
-                                <div>
-                                    <h3 class="text-white text-lg">
-                                        {donation.organization}
-                                    </h3>
-                                    <p class="text-[#525252] text-sm">
-                                        {donation.item}
-                                    </p>
+                    {#if donations.length > 0}
+                        {#each donations as donation}
+                            <div class="flex justify-between items-center">
+                                <div class="flex gap-4">
+                                    <img
+                                        src={charityImg}
+                                        alt="Charity logo"
+                                        class="h-10 bg-[#121416] p-1.5"
+                                    />
+                                    <div>
+                                        <h3 class="text-white text-lg">
+                                            {donation.organization}
+                                        </h3>
+                                        <p class="text-[#525252] text-sm">
+                                            {donation.item}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="text-[#ABABAB]">
+                                    {donation.date}
+                                </div>
+                                <div class="flex text-white font-bold text-lg">
+                                    +${donation.amount}
                                 </div>
                             </div>
-                            <div class="text-[#ABABAB]">
-                                {donation.date.toLocaleDateString("en-US", {
-                                    day: "numeric",
-                                    month: "long",
-                                    hour: "numeric",
-                                    minute: "numeric",
-                                })}
-                            </div>
-                            <div class="flex text-white font-bold text-lg">
-                                +${donation.amount}
-                            </div>
+                        {/each}
+                    {:else}
+                        <div class="flex justify-center items-center">
+                            <p class="text-[#ABABAB] text-sm">
+                                No donations yet
+                            </p>
                         </div>
-                    {/each}
+                    {/if}
                 </div>
             </div>
         </div>

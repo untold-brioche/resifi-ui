@@ -1,0 +1,153 @@
+body {
+    background-color: #080808;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Horizontal center alignment */
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    font-family: "Inter";
+    font-size: 61px;
+    font-weight: 700;
+    line-height: 76.3px;
+    letter-spacing: -1.22px;
+    color: white;
+    margin: 0;
+}
+
+p {
+    text-align: center;
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.black {
+    color: "#070A13";
+}
+
+.high-white {
+    color: #F2F2F2;
+}
+
+.high-grey {
+    color: #DBDBDB;
+}
+
+.low-grey {
+    color: #ABABAB;
+}
+
+.button {
+    display: flex;
+    padding: 0px 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 500px;
+    background: #DBDBDB;
+}
+
+nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    padding-top: 5vh;
+    width: 92vw;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.pages {
+    color: #DBDBDB;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.self-center {
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+}
+
+.hero{
+    position: absolute;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Horizontal center alignment */
+    align-items: center;
+    z-index: 100;
+    gap: 16px;
+}
+
+.headline {
+    width: 50vw;
+    position: relative;
+    z-index: 100;
+    background: linear-gradient(128deg, #DBDBDB 0%, #757575 81.11%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.button-row {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.glow1 {
+    position: absolute;
+    z-index: 0;
+    top:10vh;
+    left: -20vw;
+    width: 1182.418px;
+height: 144px;
+transform: rotate(42.606deg);
+flex-shrink: 0;
+border-radius: 400px;
+opacity: 0.6;
+background: linear-gradient(121deg, #AA92E5 20.24%, rgba(170, 146, 229, 0.74) 69.35%, rgba(170, 146, 229, 0.00) 100%);
+filter: blur(75px);
+}
+
+.scroll-wrapper{
+    position: absolute;
+    top: 88%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Horizontal center alignment */
+    align-items: center;
+    gap: 0px;
+    z-index: 100;
+}
+
+.glow2 {
+    position: absolute;
+    z-index: 0;
+    top:10vh;
+    left: -20vw;
+    width: 1182.418px;
+height: 144px;
+transform: rotate(42.606deg);
+flex-shrink: 0;
+border-radius: 400px;
+opacity: 0.6;
+background: linear-gradient(121deg, #AA92E5 20.24%, rgba(170, 146, 229, 0.74) 69.35%, rgba(170, 146, 229, 0.00) 100%);
+filter: blur(75px);
+}

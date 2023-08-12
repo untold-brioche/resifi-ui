@@ -197,7 +197,7 @@
         height="1009"
         viewBox="0 0 912 1009"
         fill="none"
-        class="absolute top- right-0"
+        class="absolute top-0 right-0"
     >
         <g filter="url(#filter0_f_75_4)">
             <path

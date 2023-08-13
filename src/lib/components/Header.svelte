@@ -13,7 +13,7 @@
     </nav>
 
     <a
-        href="/dashboard"
+        href="/login"
         class="py-[1rem] px-6 rounded-full bg-[#DBDBDB] text-dark text-lg font-semibold flex gap-0.5 items-center"
     >
         <span>Get Started</span>

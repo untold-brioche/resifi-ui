@@ -28,7 +28,7 @@
     >
         <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1
-                class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white"
+                class="text-xl font-bold leading-tight tracking-tight md:text-2xl text-white"
             >
                 Sign in to your account
             </h1>
@@ -36,7 +36,7 @@
                 <div>
                     <label
                         for="email"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        class="block mb-2 text-sm font-medium text-white"
                         >Your email</label
                     >
                     <input
@@ -51,7 +51,7 @@
                 <div>
                     <label
                         for="password"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        class="block mb-2 text-sm font-medium text-white"
                         >Password</label
                     >
                     <input
@@ -70,14 +70,11 @@
                                 id="remember"
                                 aria-describedby="remember"
                                 type="checkbox"
-                                class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
+                                class="w-4 h-4 border rounded focus:ring-3 focus:ring-primary-300 bg-gray-700 border-gray-600 focus:ring-primary-600 ring-offset-gray-800"
                             />
                         </div>
                         <div class="ml-3 text-sm">
-                            <label
-                                for="remember"
-                                class="text-gray-500 dark:text-gray-300"
-                            >
+                            <label for="remember" class="text-gray-300">
                                 Remember me
                             </label>
                         </div>
@@ -98,7 +95,7 @@
                 <p class="text-sm font-light text-[#ABABAB]">
                     Don't have an account yet? <a
                         href="/signup"
-                        class="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                        class="font-medium hover:underline"
                     >
                         Sign up
                     </a>

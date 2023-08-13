@@ -557,15 +557,14 @@
                                     </div>
                                 </div>
                                 <div class="text-[#ABABAB]">
-                                    {new Date(donation.date).toLocaleDateString(
-                                        "en-US",
-                                        {
-                                            day: "numeric",
-                                            month: "long",
-                                            hour: "numeric",
-                                            minute: "numeric",
-                                        }
-                                    )}
+                                    {new Date(
+                                        donation.date * 1000
+                                    ).toLocaleDateString("en-US", {
+                                        day: "numeric",
+                                        month: "long",
+                                        hour: "numeric",
+                                        minute: "numeric",
+                                    })}
                                 </div>
                                 <div class="flex text-white font-bold text-lg">
                                     ${donation.amount}

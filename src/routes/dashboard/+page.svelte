@@ -9,7 +9,7 @@
     interface Donation {
         organization: string;
         item: string;
-        date: string;
+        date: number;
         amount: string;
     }
 
@@ -557,7 +557,15 @@
                                     </div>
                                 </div>
                                 <div class="text-[#ABABAB]">
-                                    {donation.date}
+                                    {new Date(donation.date).toLocaleDateString(
+                                        "en-US",
+                                        {
+                                            day: "numeric",
+                                            month: "long",
+                                            hour: "numeric",
+                                            minute: "numeric",
+                                        }
+                                    )}
                                 </div>
                                 <div class="flex text-white font-bold text-lg">
                                     ${donation.amount}

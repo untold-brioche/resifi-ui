@@ -11,14 +11,8 @@
 
 <Header />
 
-<div class="absolute inset-0 -z-50">
-    <svg
-        width="1440"
-        height="738"
-        viewBox="0 0 1440 738"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-    >
+<div class="absolute inset-0 -z-50 h-full">
+    <svg viewBox="0 0 1440 738" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g opacity="0.6" filter="url(#filter0_f_61_80)">
             <rect
                 x="93.217"

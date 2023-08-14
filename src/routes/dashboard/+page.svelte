@@ -4,7 +4,7 @@
     import charityImg from "$lib/images/charity.png";
     import { onMount } from "svelte";
 
-    const api = "https://finishing-witch-carpet-democrat.trycloudflare.com";
+    const api = "https://og-routes-weight-pray.trycloudflare.com";
 
     interface Donation {
         organization: string;
